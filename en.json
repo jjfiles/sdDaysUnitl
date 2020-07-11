@@ -1,0 +1,8 @@
+{
+  "Description": "Count number of days left until selected date", 
+  "Name": "Days Until", 
+  "com.elgato.counter.action": {
+    "Name": "Days Until", 
+    "Tooltip": "How many days left until graduation?"
+  }
+}

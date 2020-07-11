@@ -1,0 +1,40 @@
+{
+  "Actions": [
+    {
+      "Icon": "actionIcon", 
+      "Name": "DaysUntil", 
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle", 
+          "FontSize": "16"
+        }
+      ], 
+      "SupportedInMultiActions": false,
+      "Tooltip": "How many days until and event? Track with this counter!", 
+      "UUID": "com.jfiles.daysuntil.action"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "Jeffery Files", 
+  "CodePath": "code.html", 
+  "Description": "Track number of days until an event", 
+  "Name": "DaysUntil", 
+  "Icon": "pluginIcon", 
+  "URL": "https://jfiles.dev", 
+  "Version": "1.0",
+  "OS": [
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    },
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+    }
+}
