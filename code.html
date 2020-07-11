@@ -2,11 +2,17 @@
 <html>
 
 <head>
-	<title>com.elgato.counter</title>
     <meta charset="utf-8" />
+	<title>com.jfiles.daysuntil</title>
+	<link rel="stylesheet" href="sdpi.css">
 </head>
 
 <body>
+	<div class="sdpi-item">
+	    <div class="sdpi-item-label">Event Date</div>
+	    <input id="when" name="when" type="date" min="2020-01-01" max="2099-02-01" value="">
+	</div>
+
     <script>
     	
     	var websocket = null;
@@ -16,9 +22,9 @@
     	
         var timer;
         
-    	var counterAction = {
+    	var daysUntilAction = {
 			
-			type : "com.elgato.counter.action",
+			type : "com.jfiles.daysuntil.action",
 			
 			onKeyDown : function(context, settings, coordinates, userDesiredState) {
                 
@@ -26,8 +32,8 @@
                  var updatedSettings = {};
                  updatedSettings["keyPressCounter"] = -1;
                
-                 counterAction.SetSettings(context, updatedSettings);
-                 counterAction.SetTitle(context, 0);
+                 daysUntilAction.SetSettings(context, updatedSettings);
+                 daysUntilAction.SetTitle(context, 0);
                },1500);
 			},
 			
@@ -121,7 +127,7 @@
 					var settings = jsonPayload['settings'];
 					var coordinates = jsonPayload['coordinates'];
 					var userDesiredState = jsonPayload['userDesiredState'];
-					counterAction.onKeyDown(context, settings, coordinates, userDesiredState);
+					daysUntilAction.onKeyDown(context, settings, coordinates, userDesiredState);
 				}
 				else if(event == "keyUp")
 				{
@@ -129,14 +135,14 @@
 					var settings = jsonPayload['settings'];
 					var coordinates = jsonPayload['coordinates'];
 					var userDesiredState = jsonPayload['userDesiredState'];
-					counterAction.onKeyUp(context, settings, coordinates, userDesiredState);
+					daysUntilAction.onKeyUp(context, settings, coordinates, userDesiredState);
 				}
 				else if(event == "willAppear")
 				{
 					var jsonPayload = jsonObj['payload'];
 					var settings = jsonPayload['settings'];
 					var coordinates = jsonPayload['coordinates'];
-					counterAction.onWillAppear(context, settings, coordinates);
+					daysUntilAction.onWillAppear(context, settings, coordinates);
 				}
 			};
 
