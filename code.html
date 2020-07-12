@@ -30,7 +30,7 @@
                 
               timer = setTimeout(function () {
                  var updatedSettings = {};
-                 updatedSettings["keyPressCounter"] = -1;
+                 updatedSettings["daysLeft"] = -1;
                
                  daysUntilAction.SetSettings(context, updatedSettings);
                  daysUntilAction.SetTitle(context, 0);
@@ -41,37 +41,37 @@
 				
                 clearTimeout(timer);
                 
-				var keyPressCounter = 0;
-				if(settings != null && settings.hasOwnProperty('keyPressCounter')){
-					keyPressCounter = settings["keyPressCounter"];
+				var daysLeft = 0;
+				if(settings != null && settings.hasOwnProperty('daysLeft')){
+					daysLeft = settings["daysLeft"];
 				}
 				
-				keyPressCounter++;
+				daysLeft++;
 				
 				updatedSettings = {};
-				updatedSettings["keyPressCounter"] = keyPressCounter;
+				updatedSettings["daysLeft"] = daysLeft;
 				
 				this.SetSettings(context, updatedSettings);
 				
-				this.SetTitle(context, keyPressCounter);
+				this.SetTitle(context, daysLeft);
 			},
 			
 			onWillAppear : function(context, settings, coordinates) {
 				
-				var keyPressCounter = 0;
-				if(settings != null && settings.hasOwnProperty('keyPressCounter')){
-					keyPressCounter = settings["keyPressCounter"];
+				var daysLeft = 0;
+				if(settings != null && settings.hasOwnProperty('daysLeft')){
+					daysLeft = settings["daysLeft"];
 				}
 				
-				this.SetTitle(context, keyPressCounter);
+				this.SetTitle(context, daysLeft);
 			},
 			
-			SetTitle : function(context, keyPressCounter) {
+			SetTitle : function(context, daysLeft) {
 				var json = {
 					"event": "setTitle",
 					"context": context,
 					"payload": {
-						"title": "" + keyPressCounter,
+						"title": "" + daysLeft,
 						"target": DestinationEnum.HARDWARE_AND_SOFTWARE
 					}
 				};
